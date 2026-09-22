@@ -10,6 +10,11 @@ public class BstSearch {
      * binary search tree. A null root will cause this method to always return
      * false if a valid target is given.
      * 
+     * This method must run in O(log(n)) if the tree is balanced, where n is the # of
+     * nodes in the tree. In other words, this method should NOT search every node -
+     * it should take advantage of the binary search tree properties to efficiently
+     * search.
+     * 
      * @param <T> The type of the values held in the nodes
      * @param root the root of the binary search tree (assumed to be valid)
      * @param target the value to search for
@@ -17,6 +22,7 @@ public class BstSearch {
      * @throws NullPointerException if target is null
      */
     public static <T extends Comparable<T>> boolean contains(BinaryTreeNode<T> root, T target) {
+        // Implement here, and make sure to implement tests too!
         return false;
     }
 }
