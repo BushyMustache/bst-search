@@ -45,4 +45,27 @@ public class BstSearchTest {
         assertTrue(BstSearch.contains(root, 10));
         assertTrue(BstSearch.contains(root, 15));
     }
+
+    @Test
+    void returnsFalseWhenTargetIsMissing() {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(
+            8,
+            new BinaryTreeNode<>(4),
+            new BinaryTreeNode<>(
+                12,
+                new BinaryTreeNode<>(10),
+                new BinaryTreeNode<>(15)
+            )
+        );
+
+        assertFalse(BstSearch.contains(root, 1));
+        assertFalse(BstSearch.contains(root, 20));
+    }
+
+    @Test
+    void throwsExceptionWhenTargetIsNull() {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
+
+        assertThrows(NullPointerException.class, () -> BstSearch.contains(root, null));
+    }
 }
