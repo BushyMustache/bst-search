@@ -15,4 +15,34 @@ public class BstSearchTest {
 
         assertTrue(BstSearch.contains(root, 5));
     }
+
+    @Test
+    void containsSingleNodeWhenTargetDoesNotMatch() {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
+
+        assertFalse(BstSearch.contains(root, 10));
+    }
+
+    @Test
+    void containsTargetInLeftSubtree() {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(8, new BinaryTreeNode<>(4), new BinaryTreeNode<>(12));
+
+        assertTrue(BstSearch.contains(root, 4));
+    }
+
+    @Test
+    void containsTargetDeeperInRightSubtree() {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(
+            8,
+            new BinaryTreeNode<>(4),
+            new BinaryTreeNode<>(
+                12,
+                new BinaryTreeNode<>(10),
+                new BinaryTreeNode<>(15)
+            )
+        );
+
+        assertTrue(BstSearch.contains(root, 10));
+        assertTrue(BstSearch.contains(root, 15));
+    }
 }
