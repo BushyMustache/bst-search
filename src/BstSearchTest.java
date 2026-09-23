@@ -68,4 +68,13 @@ public class BstSearchTest {
 
         assertThrows(NullPointerException.class, () -> BstSearch.contains(root, null));
     }
+
+    @Test
+    void worksWithStrings() {
+        BinaryTreeNode<String> root = new BinaryTreeNode<>("m", new BinaryTreeNode<>("f"), new BinaryTreeNode<>("t"));
+
+        assertTrue(BstSearch.contains(root, "m"));
+        assertTrue(BstSearch.contains(root, "t"));
+        assertFalse(BstSearch.contains(root, "z"));
+    }
 }
