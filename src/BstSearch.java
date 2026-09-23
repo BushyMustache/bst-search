@@ -29,6 +29,6 @@ public class BstSearch {
 
         if (comparison == 0) return true;
         else if (comparison < 0) return contains(root.left, target);
-        else return contains(root.right, target)
+        else return contains(root.right, target);
     }
 }
